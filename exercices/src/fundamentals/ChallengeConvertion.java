@@ -25,6 +25,6 @@ public class ChallengeConvertion {
 		mediaSalario = (double) salarios / numeroDeSalarios;
 		entradas.close();
 		
-		System.out.printf("A média dos salários é: %.2f\n",mediaSalario);
+		System.out.printf("A média dos salários é: %.2f\n", mediaSalario);
 	}
 }
