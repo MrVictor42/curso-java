@@ -1,4 +1,4 @@
-package arrays.challengers;
+package arraysCollections.challengers;
 
 import java.util.Scanner;
 
