@@ -13,11 +13,28 @@ public class Corrida {
 		Carro honda = new Honda();
 		honda.tipo = "Honda";
 		
+		honda.acelerar();
+		System.out.println(honda);
+		
+		honda.acelerar();
+		System.out.println(honda);
+		
+		honda.acelerar();
+		System.out.println(honda);
+		
+		ferrari.ligarTurbo();
+		ferrari.ligarAr();
+		ferrari.desligarAr();
 		ferrari.acelerar();
 		ferrari.frear();
-		honda.acelerar();
-		
 		System.out.println(ferrari);
-		System.out.println(honda);
+		
+		ferrari.acelerar();
+		ferrari.frear();
+		System.out.println(ferrari);
+		
+		ferrari.acelerar();
+		System.out.println(ferrari);
+		System.out.println(ferrari.velocidadeDoAr());
 	}
 }
