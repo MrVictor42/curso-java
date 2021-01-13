@@ -2,7 +2,6 @@ package br.com.cod3r.cm.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
 
 public class Campo {
 	
@@ -51,7 +50,7 @@ public class Campo {
 		}
 	}
 	
-	void alterarMarcacao() {
+	public void alterarMarcacao() {
 		if(!aberto) {
 			
 			marcado = !marcado;
@@ -64,7 +63,7 @@ public class Campo {
 		}
 	}
 	
-	boolean abrir() {
+	public boolean abrir() {
 		if(!aberto && !marcado) {			
 			if(minado) {
 				notificarObservadores(CampoEvento.EXPLODIR);
@@ -83,7 +82,7 @@ public class Campo {
 		}
 	}
 	
-	boolean vizinhancaSegura() {
+	public boolean vizinhancaSegura() {
 		return vizinhos.stream().noneMatch(vizinho -> vizinho.minado);
 	}
 	
@@ -148,8 +147,8 @@ public class Campo {
 		return desvendado || protegido;
 	}
 	
-	long minasNaVizinhanca() {
-		return vizinhos.stream().filter(vizinho -> vizinho.minado).count();
+	public int minasNaVizinhanca() {
+		return (int) vizinhos.stream().filter(vizinho -> vizinho.minado).count();
 	}
 	
 	void reiniciar() {
@@ -157,5 +156,6 @@ public class Campo {
 		aberto = false;
 		minado = false;
 		marcado = false;
+		notificarObservadores(CampoEvento.REINICIAR);
 	}
 }
