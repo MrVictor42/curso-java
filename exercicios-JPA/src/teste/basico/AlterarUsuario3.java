@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import modelo.basico.Usuario;
 
-public class AlterarUsuario1 {
+public class AlterarUsuario3 {
 	
 	public static void main(String[] args) {
 		
@@ -16,10 +16,10 @@ public class AlterarUsuario1 {
 		em.getTransaction().begin();
 		
 		Usuario usuario = em.find(Usuario.class, 3L);
-		usuario.setNome("Victor");
-		usuario.setEmail("victor@lance.com.br");
+		usuario.setNome("Victor Mota");
 		
-		em.merge(usuario); // COMANDO DE UPDATE, MAS NÃO É OBRIGATÓRIO
+		em.detach(usuario); //NESSE METODO, O BANCO MEIO QUE ESPERA PARA REALIZAR A TRANSAÇÃO
+		em.merge(usuario);
 		em.getTransaction().commit();
 		
 		em.close();

@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 import modelo.basico.Usuario;
 
-public class AlterarUsuario1 {
+public class AlterarUsuario2 {
 	
 	public static void main(String[] args) {
 		
@@ -16,10 +16,9 @@ public class AlterarUsuario1 {
 		em.getTransaction().begin();
 		
 		Usuario usuario = em.find(Usuario.class, 3L);
-		usuario.setNome("Victor");
-		usuario.setEmail("victor@lance.com.br");
+		usuario.setNome("Victor Alterado");
 		
-		em.merge(usuario); // COMANDO DE UPDATE, MAS NÃO É OBRIGATÓRIO
+//		em.merge(usuario); // COMANDO DE UPDATE
 		em.getTransaction().commit();
 		
 		em.close();
