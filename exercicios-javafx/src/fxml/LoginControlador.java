@@ -20,9 +20,11 @@ public class LoginControlador {
 		boolean senhaValida = campoSenha.getText().equals("12345678");
 		
 		if(emailValido && senhaValida) {
-			Notifications.create().position(Pos.TOP_RIGHT).title("LoginJFX").text("Login Efetivado Com Sucesso").showInformation();
+			Notifications.create().position(Pos.TOP_RIGHT)
+				.title("LoginJFX").text("Login Efetivado Com Sucesso").showInformation();
 		} else {
-			Notifications.create().position(Pos.TOP_RIGHT).title("LoginJFX").text("Usuário e Senha Inválidos!").showError();
+			Notifications.create().position(Pos.TOP_RIGHT)
+				.title("LoginJFX").text("Usuário e Senha Inválidos!").showError();
 		}
 	}
 }
