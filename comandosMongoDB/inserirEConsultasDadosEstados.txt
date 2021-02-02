@@ -1,0 +1,16 @@
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"}) -> insere um dado na collection estados
+db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste"}) -> serve tanto para inserir quanto para atualizar o dado
+db.estados.find() -> mostra todos os estados inseridos
+db.estados.findOne() -> retorna o primeiro estado
+db.estados.find().pretty() -> mostra todos os estados inseridos de forma "bonita"
+db.estados.insert({nome: "Rio de Janeiro", sigla: "RJ", regiao: "Sudeste", cidades: [{nome: "Niteroi", area: 133.9, populacao: 487562}]}) ->
+insere o estado do Rio de Janeiro, com um array de cidades dentro
+db.estados.insert({nome: "São Paulo", sigla: "SP", regiao: "Sudeste", cidades: [{_id: ObjectId(), nome: "Campinas", area: 795.7, prefeito: "Jonas Donizette", populacao: 1081000}, {_id: ObjectId(), nome: "Guarulhos", populacao: 1325000}, {_id: ObjectId(), nome: "Sorocaba", distanciaCapital: 87, populacao: 644919}]})
+db.estados.findOne({sigla: "RJ"}) -> retorna o estado que tem a sigla RJ
+db.estados.find({sigla: "RJ"}).pretty() -> retorna todos os estados com a sigla RJ
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty()
+db.estados.find({populacao: {$exists: true}}).pretty() -> verificar se existe populacao dentro de estados
+db.estados.find().skip(1).limit(2).pretty() -> pula o primeiro registro e limita o resultado para dois registros
+db.estados.count()
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0}).pretty()

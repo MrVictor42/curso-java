@@ -1,0 +1,8 @@
+show dbs -> Mostra os bancos disponíveis
+use wm -> muda a perspectiva para um banco de dados. Caso não exista o banco, ele é criado
+db.createCollection('estados') -> cria uma coleção de estados
+show collections -> mostra as coleções
+O mongodb é caso sensitive, então usando o comando da linha 3, mas com "Estados", será criado outra coleção de estados
+db.estados.drop() -> exclui a tabela
+
+NO MONGODB, CADA REGISTRO (LINHA DA TABELA), REPRESENTA UM DOCUMENTO NO FORMADO JSON

@@ -1,0 +1,5 @@
+db.estados.update({sigla: "SP"}, {$set: {populacao: 4500000}})
+db.estados.update({sigla: "AL"}, {$set: {cidades: [{nome: "Sergipe"}]}}})
+db.estados.update({sigla: "SP"}, {$push: {cidades: {nome: "Santos", populacao: 440000}}})
+db.estados.find({populacao: {$exists: true}}, {_id: 0, nome: 1})
+db.estados.update({sigla: "RJ"}, {$set: {populacao: 16720000}})
